@@ -1,8 +1,10 @@
-require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
-
+require 'codeclimate-test-reporter'
+require 'simplecov'
 require 'coveralls'
-Coveralls.wear!
 
-require 'pry'
-require 'puppet/moddeps'
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  CodeClimate::TestReporter::Formatter,
+  Coveralls::SimpleCov::Formatter,
+  SimpleCov::Formatter::HTMLFormatter
+]
+SimpleCov.start 'rails'
