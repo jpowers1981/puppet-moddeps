@@ -1,5 +1,5 @@
-require 'codeclimate-test-reporter'
 require 'simplecov'
+require 'codeclimate-test-reporter'
 require 'coveralls'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
